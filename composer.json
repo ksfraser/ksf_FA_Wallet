@@ -1,0 +1,13 @@
+{
+    "name": "ksfraser/ksf_fa_wallet",
+    "description": "Digital Wallet System for FrontAccounting (extracted from TeraWallet/WooCommerce)",
+    "type": "frontaccounting-module",
+    "require": {
+        "ksfraser/ksf_fa_crm": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ksf\\FA\\Wallet\\": "src/"
+        }
+    }
+}

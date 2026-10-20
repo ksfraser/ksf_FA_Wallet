@@ -58,7 +58,7 @@ function display_wallet_users_table() {
             COALESCE(w.balance, 0) as balance,
             COALESCE(w.is_locked, 0) as is_locked
             FROM " . TB_PREF . "users u
-            LEFT JOIN fa_wallet_balances w ON u.user_id = w.user_id
+            LEFT JOIN 0_ksf_wallet_balances w ON u.user_id = w.user_id
             ORDER BY u.user_name";
     
     $result = db_query($sql, "Could not get users");
@@ -134,7 +134,7 @@ function wallet_adjust_page($user_id) {
 function wallet_transactions_page($user_id) {
     page(_($help_context = "Wallet Transactions"));
     
-    $sql = "SELECT * FROM fa_wallet_transactions 
+    $sql = "SELECT * FROM 0_ksf_wallet_transactions 
             WHERE user_id=" . (int)$user_id . " AND deleted=0 
             ORDER BY date DESC 
             LIMIT 100";

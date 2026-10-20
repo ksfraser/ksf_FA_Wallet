@@ -146,10 +146,10 @@ Admin UI pages for:
 
 ### 2.3 Database Schema
 
-#### fa_wallet_balances
+#### 0_ksf_wallet_balances
 
 ```sql
-CREATE TABLE fa_wallet_balances (
+CREATE TABLE 0_ksf_wallet_balances (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,                      -- Links to FA users or debtors
     balance DECIMAL(15,2) DEFAULT 0,
@@ -161,10 +161,10 @@ CREATE TABLE fa_wallet_balances (
 );
 ```
 
-#### fa_wallet_transactions
+#### 0_ksf_wallet_transactions
 
 ```sql
-CREATE TABLE fa_wallet_transactions (
+CREATE TABLE 0_ksf_wallet_transactions (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     type ENUM('credit', 'debit', 'cashback', 'transfer_in', 'transfer_out') NOT NULL,
@@ -304,7 +304,7 @@ Wallets link to FrontAccounting customers via user_id:
 
 ```sql
 SELECT w.*, u.user_name, u.real_name, d.name as customer_name
-FROM fa_wallet_balances w
+FROM 0_ksf_wallet_balances w
 JOIN users u ON w.user_id = u.user_id
 LEFT JOIN debtors_master d ON u.debtor_no = d.debtor_no
 WHERE w.user_id = ?
@@ -341,7 +341,7 @@ ksf_FA_Wallet/
 ├── sql/
 │   ├── install.sql              # Schema installation
 │   ├── update.sql               # Version migrations
-│   └── fa_wallet_transactions.sql # Transaction table
+│   └── 0_ksf_wallet_transactions.sql # Transaction table
 └── ProjectDcs/
     ├── Business Requirements.md
     ├── Architecture.md

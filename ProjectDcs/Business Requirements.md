@@ -204,8 +204,8 @@ The following are explicitly not in scope for this version:
 |-------|------|---------|
 | `debtors_master` | External (FA) | Customer information |
 | `debtor_trans` | External (FA) | AR transactions |
-| `fa_wallet_balances` | Local | Customer wallet balances |
-| `fa_wallet_transactions` | Local | Transaction records |
+| `0_ksf_wallet_balances` | Local | Customer wallet balances |
+| `0_ksf_wallet_transactions` | Local | Transaction records |
 | `fa_wallet_cashback_rules` | Local | Cashback configuration |
 
 ---

@@ -5,8 +5,8 @@
 ### Functional Requirements
 
 #### FR-1: FA Database Integration
-- **FR-1.1**: Module must create fa_wallet_transactions table on install
-- **FR-1.2**: Module must create fa_wallet_balances table on install
+- **FR-1.1**: Module must create 0_ksf_wallet_transactions table on install
+- **FR-1.2**: Module must create 0_ksf_wallet_balances table on install
 - **FR-1.3**: FA_WalletRepository must implement WalletRepositoryInterface
 - **FR-1.4**: Use FA's database wrapper (ADV_Query) for all queries
 

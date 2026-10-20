@@ -182,7 +182,7 @@ This Test Plan defines the testing approach, scenarios, and criteria for the ksf
 **Test Steps:**
 1. Create wallet with balance = 100.00
 2. Invoke `credit(5, 50.00, 'Manual credit')`
-3. Query fa_wallet_transactions for user_id = 5
+3. Query 0_ksf_wallet_transactions for user_id = 5
 4. Verify transaction exists with:
    - type = 'credit'
    - amount = 50.00
@@ -464,7 +464,7 @@ INSERT INTO users (user_id, user_name, real_name) VALUES
 (2, 'testuser2', 'Test User 2');
 
 -- Insert test wallets
-INSERT INTO fa_wallet_balances (user_id, balance) VALUES 
+INSERT INTO 0_ksf_wallet_balances (user_id, balance) VALUES 
 (1, 100.00),
 (2, 0.00);
 ```
